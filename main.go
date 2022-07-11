@@ -155,7 +155,6 @@ func main() {
 		setupLog.Error(err, "unable to create controller", "controller", "DBaaSInstance")
 		os.Exit(1)
 	}
-	if err = (&controllers.DBaaSDefaultPolicyReconciler{
 		DBaaSReconciler: DBaaSReconciler,
 	}).SetupWithManager(mgr); err != nil {
 		setupLog.Error(err, "unable to create controller", "controller", "DBaaSDefaultPolicy")
