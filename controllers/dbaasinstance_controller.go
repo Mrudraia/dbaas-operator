@@ -76,7 +76,6 @@ func (r *DBaaSInstanceReconciler) Reconcile(ctx context.Context, req ctrl.Reques
 	} else if !validNS {
 		SetInstanceMetrics(inventory.Spec.ProviderRef.Name, inventory.Name, instance)
 		SetInstanceRequestDurationSeconds(execution, *inventory, instance)
-
 		return ctrl.Result{}, nil
 	} else if !provision {
 		return ctrl.Result{}, nil
